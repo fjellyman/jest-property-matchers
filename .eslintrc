@@ -1,0 +1,48 @@
+{
+  "env": {
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:jest/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "parser": "babel-eslint",
+  "plugins": [
+    "jest"
+  ],
+  "rules": {
+    "comma-dangle": [
+      "warn",
+      "only-multiline"
+    ],
+    "eol-last": [
+      "warn",
+      "always"
+    ],
+    "indent": [
+      "warn",
+      2
+    ],
+    "jest/expect-expect": "error",
+    "no-console": "error",
+    "no-trailing-spaces": "warn",
+    "no-unused-vars": [
+      "error",
+      {
+        "args": "none",
+        "ignoreRestSiblings": true
+      }
+    ],
+    "object-curly-spacing": "warn",
+    "prefer-const": "warn",
+    "quotes": [
+      "warn",
+      "single"
+    ],
+    "semi": "error"
+  }
+}

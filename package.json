@@ -1,0 +1,69 @@
+{
+  "name": "jest-property-matcher",
+  "version": "0.1.0",
+  "description": "Additional Object Property Jest Matchers",
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "types/index.d.ts"
+  ],
+  "scripts": {
+    "build": "babel src -d dist --ignore *.spec.js",
+    "format": "prettier --write \"**/*.+(js)\"",
+    "lint": "eslint src",
+    "prepublishOnly": "npm run build",
+    "test": "jest",
+    "test:coverage": "npm test -- --collect-coverage",
+    "test:report": "codecov",
+    "test:watch": "npm test -- --watch"
+  },
+  "keywords": [
+    "jest",
+    "matchers",
+    "property",
+    "properties",
+    "test",
+    "testing",
+    "assertions"
+  ],
+  "author": "Jordan Fjellman <jordan.fjellman@gmail.com> (jordanfjellman.com)",
+  "license": "ISC",
+  "repository": "fjellyman/jest-property-matchers",
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@types/jest": "^25.1.2",
+    "babel-eslint": "^10.0.3",
+    "codecov": "^3.6.5",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jest": "^23.7.0",
+    "husky": "^4.2.1",
+    "jest": "^25.1.0",
+    "jest-matcher-utils": "^25.1.0",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.8.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && npm test"
+    }
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "testEnvironment": "node"
+  }
+}
